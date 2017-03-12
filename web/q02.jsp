@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Questao 2</h1>
+        <form action="questao2" method="POST">
+            <input type="text" name="nomes"/>
+            <input type="submit" value="Enviar"/>
     </body>
 </html>
