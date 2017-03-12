@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sony Vaio
  */
-@WebServlet(name = "Questao3", urlPatterns = {"/questao3"})
-public class Questao3 extends HttpServlet {
+@WebServlet(name = "Questao6", urlPatterns = {"/questao6"})
+public class Questao6 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,11 +31,8 @@ public class Questao3 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int    idade = Integer.valueOf(request.getParameter("idade"));
-        String civil  = request.getParameter("civil");
-        String escolaridade  = request.getParameter("escolaridade");
         
-        
+        int numero = Integer.valueOf(request.getParameter("numero"));
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -43,23 +40,15 @@ public class Questao3 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Questao3</title>");            
+            out.println("<title>Servlet Questao6</title>");            
             out.println("</head>");
             out.println("<body>");
-            if ((idade>20)&&("solteiro".equals(civil)||"solteira".equals(civil))&&("2 grau completo".equals(escolaridade)))
-            {
-                out.println("<h1> ADMITIDO </h1>");
-            
-            out.println("<br>Idade da pessoa eh: " + idade ) ;
-            out.println("<br>Estado civil: " +civil);
-            out.println("<br>Escolaridade: "+escolaridade);
-            } else{
-            out.println("PESSOA FORA DOS CRITERIOS, NAO ADMITIDA!!" ) ;         
+            if (numero>10){
+            out.println("<h1>Maior que 10, resultado: </h1> "+numero*2);
             }
-                       
-            
-             
-            
+            else{
+                 out.println("<h1>Menor ou igual a 10, resultado:</h1> "+numero*3);
+            }
             out.println("</body>");
             out.println("</html>");
         }

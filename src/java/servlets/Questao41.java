@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sony Vaio
  */
-@WebServlet(name = "Questao3", urlPatterns = {"/questao3"})
-public class Questao3 extends HttpServlet {
+@WebServlet(name = "Questao41", urlPatterns = {"/questao41"})
+public class Questao41 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,35 +31,25 @@ public class Questao3 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int    idade = Integer.valueOf(request.getParameter("idade"));
-        String civil  = request.getParameter("civil");
-        String escolaridade  = request.getParameter("escolaridade");
         
-        
-        
+        int exame = Integer.valueOf(request.getParameter("exame"));
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Questao3</title>");            
+            out.println("<title>Exame</title>");            
             out.println("</head>");
             out.println("<body>");
-            if ((idade>20)&&("solteiro".equals(civil)||"solteira".equals(civil))&&("2 grau completo".equals(escolaridade)))
-            {
-                out.println("<h1> ADMITIDO </h1>");
+            out.println("<h1>Situação do Aluno</h1>");
             
-            out.println("<br>Idade da pessoa eh: " + idade ) ;
-            out.println("<br>Estado civil: " +civil);
-            out.println("<br>Escolaridade: "+escolaridade);
-            } else{
-            out.println("PESSOA FORA DOS CRITERIOS, NAO ADMITIDA!!" ) ;         
+            if (exame>=6){
+            out.println("<h1>ALUNO APROVADO</h1>");
+            }else{
+            out.println("<h1>ALUNO REPROVADO</h1>");
+                               
             }
-                       
-            
-             
-            
             out.println("</body>");
             out.println("</html>");
         }
