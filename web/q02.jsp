@@ -16,5 +16,6 @@
         <form action="questao2" method="POST">
             <input type="text" name="nomes"/>
             <input type="submit" value="Enviar"/>
+         </form>
     </body>
 </html>

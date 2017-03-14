@@ -15,10 +15,25 @@
         <h1>Idade</h1>
         <form action="questao3" method="POST">
             <input type="text" name="idade"/>
+            
             <h1>Estado civil</h1>
-            <input type="text" name="civil"/>
+            <select name="civil">
+  <option value="solteiro">SOLTEIRO(A)</option>
+  <option value="casado">CASADO(A)</option>
+  <option value="viúvo">VIÚVO(A)</option>
+  <option value="divorciado">DIVORCIADO(A0</option>
+</select>
+            
             <h1>Escolaridade</h1>
-            <input type="text" name="escolaridade"/>
+            <select name="escolaridade">
+  
+  <option value="ENSINO FUNDAMENTAL INCOMPLETO">FUNDAMENTAL INCOMPLETO</option>
+  <option value="ENSINO FUNDAMENTAL COMPLETO">FUNDAMENTAL COMPLETO</option>
+  <option value="2 grau INcompleto">2 GRAU INCOMPLETO</option>
+  <option value="2 grau completo">2 GRAU COMPLETO </option>
+  <option value="FACULDADE">ENSINO SUPERIOR COMPLETO</option>
+ </select>
             <input type="submit" value="Enviar"/>
+         </form>
     </body>
 </html>
