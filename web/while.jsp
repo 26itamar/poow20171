@@ -1,6 +1,6 @@
 <%-- 
-    Document   : q10
-    Created on : 12/03/2017, 01:04:22
+    Document   : while
+    Created on : 13/03/2017, 20:52:15
     Author     : Sony Vaio
 --%>
 
@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        v
+         <h1>Digite a senha</h1>
+        <form action="while" method="POST">
+            <input type="text" name="senha"/>
+            <input type="submit" value="Enviar"/>
+            </form>
     </body>
 </html>

@@ -32,8 +32,8 @@ public class Questao12 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int idade1 = 1;
-        int idade2 = 2;
+        int idade1 = Integer.valueOf(request.getParameter("idade1"));;
+        int idade2 = Integer.valueOf(request.getParameter("idade2"));;
         int id3 = Integer.valueOf(request.getParameter("idade3"));
         int id4 = Integer.valueOf(request.getParameter("idade4"));
         int id5 = Integer.valueOf(request.getParameter("idade5"));
