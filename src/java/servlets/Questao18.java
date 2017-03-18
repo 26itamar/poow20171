@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sony Vaio
  */
-@WebServlet(name = "Questao5", urlPatterns = {"/questao5"})
-public class Questao5 extends HttpServlet {
+@WebServlet(name = "Questao18", urlPatterns = {"/questao18"})
+public class Questao18 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,26 +32,31 @@ public class Questao5 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
-        int numero = Integer.valueOf(request.getParameter("numero"));
-        
-        
+        int acao = Integer.valueOf(request.getParameter("acao"));
+        int n1 = Integer.valueOf(request.getParameter("numero1"));
+        int n2 = Integer.valueOf(request.getParameter("numero2"));
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Questao5</title>");            
+            out.println("<title>Servlet Questao18</title>");            
             out.println("</head>");
             out.println("<body>");
-            if (numero>=0){
-            out.println("<h1>Voce digitou:</h1> "+numero);
-            out.println("<h1>Multiplicado por 2 é: </h1> "+numero*2);
+            
+           
+            out.println("<br>Primeiro numero digitado foi: "+n1);
+            out.println("<br>Segundo numero digitado foi: "+n2);
+            if (acao==1){
+            out.println("<br>Resultado da soma dos numeros é: "+(n1+n2));
+            } else if (acao==2){
+            out.println("<br>Resultado da subtração dos numeros é: "+(n1-n2));
+            } 
+            if (acao==3){
+            out.println("<br>Resultado da divisão dos numeros é: "+(n1/n2));
             }
-            else{
-                 out.println("<h1>Este é um menor que zero</h1>");
-            }
+            out.println("<body>");
             out.println("</body>");
             out.println("</html>");
         }

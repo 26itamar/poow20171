@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        v
+         <h1>Digite 1 numeros</h1>
+        <form action="questao9" method="POST">
+            <input type="text" name="numero"/>
+            <input type="submit" value="Enviar"/>
+            </form>
     </body>
 </html>
