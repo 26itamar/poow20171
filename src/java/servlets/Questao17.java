@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sony Vaio
  */
-@WebServlet(name = "Primos100", urlPatterns = {"/primos100"})
-public class Primos100 extends HttpServlet {
+@WebServlet(name = "While", urlPatterns = {"/while"})
+public class Questao17 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,33 +31,29 @@ public class Primos100 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+         String senha1  = request.getParameter("senha");
+         
+              
+               // response.sendRedirect("q02.jsp");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Primos100</title>");            
+            out.println("<title>Servlet While</title>");            
             out.println("</head>");
             out.println("<body>");
             
-             int i;
- 
-    for (int n=1; n<=100; n++) {
- 
-      boolean ehPrimo = true;
- 
-      i = 2;
-      while ((ehPrimo == true) && (i <= (n / 2))) {
-        if ((n % i) == 0)
-           ehPrimo = false;   // encontrou um divisor, portanto, não eh primo
-        else i++;             // próximo divisor utilizando operador de
-                              // autoincremento (i++)
-      }
- 
-      if (ehPrimo == true)
-        out.println(n);
-    }
+            
+          
+          while (senha1.equals("teste")){
+               out.println(senha1);
+          
+          }
+            
             
             
             out.println("</body>");

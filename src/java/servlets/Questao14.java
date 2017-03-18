@@ -17,8 +17,23 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sony Vaio
  */
-@WebServlet(name = "Primo01", urlPatterns = {"/primo01"})
-public class Primo01 extends HttpServlet {
+@WebServlet(name = "Questao14", urlPatterns = {"/primo01"})
+public class Questao14 extends HttpServlet {
+
+    public boolean ePrimo(int num) {
+
+        int i = 0;
+        int primo = 0;
+        for (i = 2; i < num; i++) {
+            if (num % i == 0) {
+                primo = 1;
+            }
+        }
+        if(primo != 1)
+            return true;
+        else
+            return false;
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,39 +46,25 @@ public class Primo01 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-         int num = Integer.valueOf(request.getParameter("numero"));
-         int i   = 0;
-         int primo = 0;
-        
+
+        int num = Integer.valueOf(request.getParameter("numero"));
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Primo01</title>");            
+            out.println("<title>Servlet Primo01</title>");
             out.println("</head>");
             out.println("<body>");
-            
-            
-            
-            
-          for(i = 2; i < num;i++){
-            if(num%i==0){
-                primo = 1;
+
+            if (ePrimo(num)) {
+                out.println("primo");
+            } else {
+                out.println("Nao primo");
             }
-        }
-        if(primo==0){
-            out.println("primo");
-        }
-        else{
-            out.println("Nao primo");
-        }
-    
-            
-            
+
             out.println("</body>");
             out.println("</html>");
         }
